@@ -1,14 +1,11 @@
-
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
+    <%= f.input :title, wrapper_html: { class: 'mb-3 position-relative' }%>
+    <%= f.input :body, wrapper_html: { class: 'mb-3 position-relative' }%>
   </div>
-
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'w-100 btn btn-primary' %>
   </div>
 <% end %>
